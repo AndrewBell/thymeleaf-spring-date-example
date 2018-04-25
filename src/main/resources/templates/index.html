@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Date Demo</title>
+</head>
+<body>
+
+<form method="post" style="max-width:600px;" th:object="${myDate}">
+    <div class="form-group">
+        <!-- A standard HTML datepicker -->
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date -->
+        <input type="date" th:field="*{date}"></input>
+    </div>
+
+    <input type="submit" value="Convert Date"/>
+</form>
+
+<!-- Thymeleaf's double bracket notation automatically convert things, like LocalDate, to readable strings -->
+<!-- https://www.thymeleaf.org/doc/tutorials/2.1/thymeleafspring.html#the-conversion-service -->
+<h3 th:if="${convertedDate}" th:text="${{convertedDate}}"></h3>
+
+</body>
+</html>

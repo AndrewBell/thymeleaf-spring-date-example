@@ -13,6 +13,7 @@ import java.time.LocalDate;
 
 public class MyDate {
 
+    // In this case, the @DateTimeFormat tells Spring how to read the input from our HTML date picker
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
 

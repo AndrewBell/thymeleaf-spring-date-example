@@ -9,28 +9,24 @@ package com.recursivechaos.datedemo;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.validation.Valid;
-
 @Controller
 public class MyDateController {
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping
     public String showForm(Model model) {
         model.addAttribute("myDate", new MyDate());
-        return "datepicker";
+        return "index";
     }
 
-    @RequestMapping(value = "", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public String handlePost(Model model, @ModelAttribute MyDate myDate) {
         model.addAttribute("myDate", new MyDate());
         model.addAttribute("convertedDate", myDate.getDate());
-        return "datepicker";
+        return "index";
     }
 
 }

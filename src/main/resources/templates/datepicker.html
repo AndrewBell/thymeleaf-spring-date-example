@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Date Demo</title>
+</head>
+<body>
+
+<form method="post" style="max-width:600px;" th:object="${myDate}">
+    <div class="form-group">
+        <input type="date" th:field="*{date}"></input>
+    </div>
+
+    <input type="submit" value="Convert Date"/>
+</form>
+
+<h1 th:if="${convertedDate}" th:text="${convertedDate}"></h1>
+
+</body>
+</html>

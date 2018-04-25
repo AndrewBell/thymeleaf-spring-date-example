@@ -29,7 +29,7 @@ public class MyDateController {
     @RequestMapping(value = "", method = RequestMethod.POST)
     public String handlePost(Model model, @ModelAttribute MyDate myDate) {
         model.addAttribute("myDate", new MyDate());
-        model.addAttribute("convertedDate", myDate.getDate().toString());
+        model.addAttribute("convertedDate", myDate.getDate());
         return "datepicker";
     }
 
